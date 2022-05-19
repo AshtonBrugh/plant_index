@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h3>{{ plant.name|capfirst }}</h3>
+    <p>{{ plant.genus }} </p>
+    <p>Category: {{ plant.category }}</p>
+    <p>Color: {{ plant.color }}</p>
+    {% load static %}
+ <img height="350px" width="300px" src="{{ plant.plant_img.url }}" alt="My image">
+ <p>{{ plant.description }}</p>
+    </div>
+</div>
+{% endblock %}
