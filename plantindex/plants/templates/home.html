@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div>
+<div class="plant-container">
     {% for plant in plants %}
-    <div class="plant-name">
-        <a href="{%url 'plant_detail' plant.id %}">
-            <h3>{{plant.name|capfirst}}</h3>
+    {% load static %}
+    <div class="img-and-name">
+        <a class="href" href="{%url 'plant_detail' plant.id %}">
+        <img class="home-img" src="{{ plant.plant_img.url }}" alt="My image">
+            <div class="plant-name">
+                 <h3>{{plant.name|capfirst}}</h3>
         </a>
-        {% load static %}
-     <img height="350px" width="300px" src="{{ plant.plant_img.url }}" alt="My image">
-     <p>{{ plant.description }}</p>
+     </div>
     </div>
     {% endfor %}
 </div>
